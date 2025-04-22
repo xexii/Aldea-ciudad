@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>De Aldea a Ciudad - Capítulo 1</title>
+  <script>
+    let puntosCultura = 0;
+    let puntosEconomia = 0;
+    let puntosDefensa = 0;
+
+    function elegirOpcion(opcion) {
+      let resultado = document.getElementById("resultado");
+      let siguiente = document.getElementById("siguiente");
+      let contenidoExtra = document.getElementById("contenido-extra");
+
+      if (opcion === 'bosque') {
+        puntosEconomia += 1;
+        resultado.innerHTML = "Has elegido un bosque cercano a un río. Buena elección: tendrás madera, agua y pesca. La economía prosperará.";
+      } else if (opcion === 'montana') {
+        puntosDefensa += 1;
+        resultado.innerHTML = "Has elegido la ladera de una montaña. La aldea estará protegida, pero tendrás que esforzarte más por los recursos.";
+      } else if (opcion === 'llanura') {
+        puntosCultura += 1;
+        resultado.innerHTML = "Has elegido una gran llanura. Tendrás espacio para crecer y sembrar, y atraerás a más aldeanos por la facilidad del terreno.";
+      }
+
+      contenidoExtra.style.display = 'block';
+      siguiente.style.display = 'block';
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f0e6;
+      color: #3b3b3b;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #6b3e26;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #8b5e3c;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #a3704e;
+    }
+    #siguiente {
+      display: none;
+    }
+    #contenido-extra {
+      display: none;
+      margin-top: 20px;
+      background-color: #fff4e6;
+      padding: 15px;
+      border-left: 5px solid #c68e5e;
+    }
+  </style>
+</head>
+<body>
+  <h1>Capítulo 1: El Comienzo</h1>
+  <p>
+    Año 900 d.C. El Imperio Romano ha caído hace siglos y Europa está fragmentada. La mayoría de la población vive en el campo, bajo el sistema del <strong>feudalismo</strong>.
+    Eres un joven líder con la misión de fundar una nueva aldea. Un pequeño grupo de familias te acompaña en busca de un lugar donde establecerse.
+  </p>
+
+  <h2>¿Dónde quieres fundar tu aldea?</h2>
+  <button onclick="elegirOpcion('bosque')">Cerca de un bosque y un río</button>
+  <button onclick="elegirOpcion('montana')">En la ladera de una montaña</button>
+  <button onclick="elegirOpcion('llanura')">En una gran llanura fértil</button>
+
+  <div id="resultado"></div>
+
+  <div id="contenido-extra">
+    <h3>¿Qué aprendemos en este capítulo?</h3>
+    <ul>
+      <li>La Edad Media comenzó tras la caída del Imperio Romano de Occidente (año 476).</li>
+      <li>La mayoría de la población vivía en el campo, en aldeas bajo el control de un señor feudal.</li>
+      <li>El feudalismo era un sistema donde los campesinos trabajaban las tierras a cambio de protección.</li>
+      <li>Los elementos geográficos eran claves para la supervivencia: agua, tierra fértil, defensa natural.</li>
+      <li>La sociedad estaba dividida en estamentos: nobles, clérigos y campesinos.</li>
+    </ul>
+    <p><strong>Palabras clave:</strong> Feudalismo, aldeas, campesinos, señor feudal, Edad Media.</p>
+  </div>
+
+  <button id="siguiente" onclick="window.location.href='capitulo2.html'">Ir al Capítulo 2</button>
+</body>
+</html>
