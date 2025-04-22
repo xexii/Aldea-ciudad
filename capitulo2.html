@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capítulo 2 - El Señor Feudal</title>
+  <script>
+    let cultura = 0;
+    let economia = 0;
+    let defensa = 0;
+
+    function elegirConstruccion(opcion) {
+      let resultado = document.getElementById("resultado");
+      let siguiente = document.getElementById("siguiente");
+      let contenidoExtra = document.getElementById("contenido-extra");
+
+      if (opcion === 'molino') {
+        economia += 1;
+        resultado.innerHTML = "Construiste un molino. Aumenta la producción de harina y mejora la economía del feudo.";
+      } else if (opcion === 'iglesia') {
+        cultura += 1;
+        resultado.innerHTML = "Construiste una iglesia. La gente se siente unida y el clero te apoya.";
+      } else if (opcion === 'torre') {
+        defensa += 1;
+        resultado.innerHTML = "Construiste una torre de vigilancia. El feudo está más protegido ante posibles ataques.";
+      }
+
+      contenidoExtra.style.display = 'block';
+      siguiente.style.display = 'block';
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2efe5;
+      color: #333;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #553b2a;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #7e5c3e;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #a17857;
+    }
+    #siguiente {
+      display: none;
+    }
+    #contenido-extra {
+      display: none;
+      margin-top: 20px;
+      background-color: #fff7ec;
+      padding: 15px;
+      border-left: 5px solid #c89d6c;
+    }
+  </style>
+</head>
+<body>
+  <h1>Capítulo 2: El Señor Feudal y la Organización</h1>
+  <p>
+    Has logrado fundar tu aldea. Ahora, como señor feudal, debes organizar la vida diaria de los habitantes.
+    Tendrás que decidir qué construir primero para fortalecer tu feudo. Además, aprenderás cómo se organizaba la sociedad en la Edad Media.
+  </p>
+
+  <h2>¿Qué decides construir primero?</h2>
+  <button onclick="elegirConstruccion('molino')">Un molino</button>
+  <button onclick="elegirConstruccion('iglesia')">Una iglesia</button>
+  <button onclick="elegirConstruccion('torre')">Una torre de vigilancia</button>
+
+  <div id="resultado"></div>
+
+  <div id="contenido-extra">
+    <h3>¿Qué aprendemos en este capítulo?</h3>
+    <ul>
+      <li>El señor feudal era el responsable del territorio y de la protección de sus vasallos.</li>
+      <li>La sociedad medieval estaba dividida en tres estamentos: nobles, clero y campesinos.</li>
+      <li>Los campesinos vivían en la aldea y trabajaban para el señor, a cambio de protección.</li>
+      <li>Los monasterios, iglesias y castillos eran centros de poder religioso, económico y militar.</li>
+      <li>La vida se organizaba en torno al castillo o la residencia del señor feudal.</li>
+    </ul>
+    <p><strong>Palabras clave:</strong> señor feudal, vasallos, estamentos, castillo, iglesia, molino.</p>
+  </div>
+
+  <button id="siguiente" onclick="window.location.href='capitulo3.html'">Ir al Capítulo 3</button>
+</body>
+</html>
